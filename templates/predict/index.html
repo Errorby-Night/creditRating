@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Prediction</title>
+</head>
+<body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b0d4f8;
+        }
+        form {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>    
+    <form id="credit-card-form" method="post">
+        {% csrf_token %}
+        <label for="{{ form.acc_type.id_for_label }}">Account Type:</label>
+        {{ form.acc_type }}
+        <br>
+
+        <label for="{{ form.duration.id_for_label }}">Duration:</label>
+        {{ form.duration }}
+        <br>
+
+        <label for="{{ form.history.id_for_label }}">History:</label>
+        {{ form.history }}
+        <br>
+
+        <label for="{{ form.purpose.id_for_label }}">Purpose:</label>
+        {{ form.purpose }}
+        <br>
+
+        <label for="{{ form.amount.id_for_label }}">Amount:</label>
+        {{ form.amount }}
+        <br>
+
+        <label for="{{ form.balance.id_for_label }}">Balance:</label>
+        {{ form.balance }}
+        <br>
+
+        <label for="{{ form.employment.id_for_label }}">Employment:</label>
+        {{ form.employment }}
+        <br>
+
+        <label for="{{ form.rate.id_for_label }}">Rate:</label>
+        {{ form.rate }}
+        <br>
+
+        <label for="{{ form.marital_status.id_for_label }}">Marital Status:</label>
+        {{ form.marital_status }}
+        <br>
+
+        <label for="{{ form.gender.id_for_label }}">Gender:</label>
+        {{ form.gender }}
+        <br>
+
+        <label for="{{ form.real_estate.id_for_label }}">Real Estate:</label>
+        {{ form.real_estate }}
+        <br>
+
+        <label for="{{ form.age.id_for_label }}">Age:</label>
+        {{ form.age }}
+        <br>
+
+        <label for="{{ form.other_installment.id_for_label }}">Other Installments:</label>
+        {{ form.other_installment }}
+        <br>
+        
+        <label for="{{ form.job.id_for_label }}">Job: </label>
+        {{ form.job }}
+        <br>
+
+        <label for="{{ form.num_credits.id_for_label }}">Num Credits:</label>
+        {{ form.num_credits }}
+        <br>
+
+        <label for="{{ form.phone.id_for_label }}">Phone:</label>
+        {{ form.phone }}
+        <br>
+
+        <label for="{{ form.foreign.id_for_label }}">Foreign Assets:</label>
+        {{ form.foreign }}
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <h1 id="prediction-dialog" style="display: none;">
+        {{ prediction }}
+    </h1>
+
+    
+</body>
+</html>
